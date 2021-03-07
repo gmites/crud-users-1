@@ -1,6 +1,14 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
+mongoose.connect('mongodb://localhost/crud-users-1')
+.then((db)=>{
+    console.log("Connected")
+})
+.catch((error)=>{
+    console.log("Error")
+})
+
 const app = express()
 const routes = require('./routes')
 
@@ -8,7 +16,7 @@ const routes = require('./routes')
 app.set('port', 3500)
 
 //Middlewares
-
+app.use(express.json())
 
 //Routes
 app.use('/', routes.usersRoutes)
