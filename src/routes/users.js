@@ -5,8 +5,8 @@ const router = express.Router()
 
 router.post('/user', controller.usersController.createUser)
 router.get('/users', controller.usersController.getAllUsers)
-router.get('/user', controller.usersController.getUser)
-router.put('/user', controller.usersController.updateUser)
-router.delete('/user', controller.usersController.deleteUser)
+router.get('/user/:dni', controller.usersController.getUser)
+router.put('/user/:dni', controller.usersController.updateUser)
+router.delete('/user/:dni', controller.usersController.deleteUser)
 
 module.exports= router
