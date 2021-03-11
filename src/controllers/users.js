@@ -2,7 +2,7 @@ const {userModel} = require('../models')
 
 const createUser = async(req, res)=>{
     const newUser = new userModel(req.body)
-    const regexDni = /[A-Z]{3}[0-9]{2}[a-z]{1}[0-9]{1}/
+    const regexDni = /^[A-Z]{3}[0-9]{2}[a-z]{1}[0-9]{1}$/
     const dni = req.body.dni
     const isValidDni = regexDni.test(dni)
     if(isValidDni){
@@ -45,7 +45,7 @@ const getUser = async(req, res)=>{
 const updateUser = async(req,res)=>{
     const dni = req.params.dni
     const newData = req.body
-    const regexDni = /[A-Z]{3}[0-9]{2}[a-z]{1}[0-9]{1}/
+    const regexDni = /^[A-Z]{3}[0-9]{2}[a-z]{1}[0-9]{1}$/
     const isValidDni = regexDni.test(req.body.dni)
     if(isValidDni){
         const user = await userModel.findOne({ dni: dni })
