@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 
 mongoose.connect('mongodb://localhost/crud-users-1')
