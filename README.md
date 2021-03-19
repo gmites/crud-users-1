@@ -1,4 +1,4 @@
-# Practica 1 Backend CICE: Desarrollar una API con NodeJS y Express.
+# Practica 1 Backend CICE: CRUD Users backend
 
 ## Objetivo
 
